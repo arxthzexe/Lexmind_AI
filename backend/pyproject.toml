@@ -1,38 +1,21 @@
 [tool.ruff]
 line-length = 100
-target-version = "py311"
-
-[tool.ruff.lint]
-select = ["E", "F", "I", "UP", "RUF", "B"]
-ignore = ["B008", "S110"]
-exclude = ["tests", ".venv", "build", "dist"]
-
-[tool.ruff.lint.per-file-ignores]
-"tests/**" = ["B008", "S101"]
-"**/__init__.py" = ["F401"]
 
 [tool.pytest.ini_options]
 pythonpath = [
-    "backend/shared/src",
-    "backend/gateway/src",
-    "backend/document_service/src",
-    "backend/ocr_service/src",
-    "backend/layout_service/src",
-    "backend/clause_service/src",
-    "backend/ner_service/src",
-    "backend/obligation_service/src",
-    "backend/risk_service/src",
-    "backend/compliance_service/src",
-    "backend/graphrag/src",
-    "backend/agent_orchestrator/src",
+    "shared/src",
+    "gateway/src",
+    "document_service/src",
+    "ocr_service/src",
+    "layout_service/src",
+    "clause_service/src",
+    "ner_service/src",
+    "obligation_service/src",
+    "risk_service/src",
+    "compliance_service/src",
+    "graphrag/src",
+    "agent_orchestrator/src"
 ]
-testpaths = ["backend/gateway/tests", "backend/ocr_service/tests", "backend/layout_service/tests", "backend/document_service/tests", "tests"]
+testpaths = ["gateway/tests", "ocr_service/tests", "layout_service/tests", "document_service/tests", "tests"]
 python_files = ["test_*.py"]
 
-[tool.mypy]
-python_version = "3.12"
-warn_return_any = true
-warn_unused_configs = true
-ignore_missing_imports = true
-exclude = ["numpy"]
-disable_error_code = ["syntax"]
