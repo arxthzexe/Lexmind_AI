@@ -1,15 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "lexmind-ai/package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "lexmind-ai/"
-    }
-  ]
+  "buildCommand": "npm run build --prefix lexmind-ai",
+  "outputDirectory": "lexmind-ai/.next",
+  "framework": "nextjs"
 }

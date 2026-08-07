@@ -1,0 +1,11 @@
+{
+  "name": "lexmind-ai-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix lexmind-ai",
+    "build": "npm run build --prefix lexmind-ai",
+    "start": "npm run start --prefix lexmind-ai",
+    "lint": "npm run lint --prefix lexmind-ai"
+  }
+}
