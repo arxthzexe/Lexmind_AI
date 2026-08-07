@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { 
   ArrowLeft, FileText, CheckCircle, WarningCircle, ArrowLineDown, GitDiff,
   Buildings, Calendar, Target, ShieldCheck, CheckSquareOffset, Info, CaretDown, CaretUp
@@ -11,14 +11,17 @@ import { contracts, clauses, obligations, risks, recentActivity } from "@/lib/mo
 
 const tabs = ["Overview", "Clauses", "Obligations", "Risks", "Compliance", "Timeline"];
 
-export default function ContractDetailPage({ params }: { params: { id: string } }) {
+export default function ContractDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = use(params);
+  const contractId = resolvedParams.id;
+
   const [activeTab, setActiveTab] = useState("Overview");
   const [expandedClause, setExpandedClause] = useState<string | null>(null);
   const [analyzing, setAnalyzing] = useState(false);
   const [analyzedSuccess, setAnalyzedSuccess] = useState(false);
 
   const [contract, setContract] = useState(() => {
-    return contracts.find(c => c.id === params.id) || contracts[0];
+    return contracts.find(c => c.id === contractId) || contracts[0];
   });
 
   useEffect(() => {
@@ -37,7 +40,7 @@ export default function ContractDetailPage({ params }: { params: { id: string } 
         } catch (e) {}
       }
     }
-  }, [params.id]);
+  }, [contractId]);
 
   async function handleAnalyze() {
     setAnalyzing(true);
