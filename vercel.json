@@ -1,5 +1,15 @@
 {
-  "buildCommand": "cd lexmind-ai && npm run build",
-  "outputDirectory": "lexmind-ai/.next",
-  "framework": "nextjs"
+  "version": 2,
+  "builds": [
+    {
+      "src": "lexmind-ai/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "lexmind-ai/"
+    }
+  ]
 }
