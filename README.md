@@ -100,4 +100,4 @@ npx tsc --noEmit
 
 ## 📜 License
 
-Proprietary — All rights reserved by LexMind AI Team.
+Proprietary — All rights reserved by Team NEXALYST.
