@@ -1,53 +1,41 @@
-# Python environments
-.venv/
-venv/
-env/
-__pycache__/
-*.pyc
-*.pyo
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Node
-node_modules/
-.next/
-dist/
-build/
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# Environment / secrets
-.env
-.env.*
-!.env.example
+# testing
+/coverage
 
-# Python caches
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
+# next.js
+/.next/
+/out/
 
-# Model/cache files
-.cache/
-huggingface/
-transformers_cache/
+# production
+/build
 
-# IDE
-.vscode/
-.idea/
-
-# OS
+# misc
 .DS_Store
-Thumbs.db
+*.pem
 
-# Logs
-*.log
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 
-# Large ML models
-*.bin
-*.safetensors
-*.gguf
-*.onnx
-*.pt
-*.pth
+# env files (can opt-in for committing if needed)
+.env*
 
-# Large archives
-*.zip
-*.tar
-*.gz
-*.7z
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
