@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lexmind-graphrag"
+version = "0.1.0"
+description = "GraphRAG & Knowledge Graph engine for LexMind AI"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.108",
+    "uvicorn[standard]>=0.27",
+    "pydantic>=2.5",
+    "httpx>=0.25",
+    "qdrant-client>=1.7"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["graphrag*"]

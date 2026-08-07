@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lexmind
+  namespace: lexmind
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts: [api.lexmind.example]
+    secretName: lexmind-tls
+  rules:
+  - host: api.lexmind.example
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend: {service: {name: gateway, port: {number: 80}}}

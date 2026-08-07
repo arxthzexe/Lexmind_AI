@@ -1,0 +1,16 @@
+node_modules/
+.next/
+dist/
+build/
+*.pyc
+__pycache__/
+*.egg-info/
+.venv/
+.env
+*.log
+minio-data/
+pg-data/
+neo4j-data/
+qdrant-data/
+.vscode/
+.idea/

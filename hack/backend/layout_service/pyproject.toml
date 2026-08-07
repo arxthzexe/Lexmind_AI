@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lexmind-layout-service"
+version = "0.1.0"
+description = "Layout analysis service for LexMind AI Document Intelligence pipeline"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.108",
+    "uvicorn[standard]>=0.27",
+    "pydantic>=2.5",
+    "pillow>=10.2",
+    "pdf2image>=1.17",
+    "pdfplumber>=0.11"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["layout_service*"]

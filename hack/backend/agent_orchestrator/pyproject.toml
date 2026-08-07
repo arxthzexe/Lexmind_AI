@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lexmind-agent-orchestrator"
+version = "0.1.0"
+description = "Multi-agent orchestration engine for LexMind AI"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.108",
+    "uvicorn[standard]>=0.27",
+    "pydantic>=2.5",
+    "langgraph>=0.2",
+    "langchain-core>=0.3"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["agent_orchestrator*"]

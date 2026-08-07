@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lexmind-compliance-service"
+version = "0.1.0"
+description = "Compliance validation service for LexMind AI"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.108",
+    "uvicorn[standard]>=0.27",
+    "pydantic>=2.5"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["compliance_service*"]
